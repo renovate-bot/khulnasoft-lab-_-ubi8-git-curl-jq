@@ -1,0 +1,41 @@
+# Use the Universal Base Image 8.10 as the base image
+FROM registry.access.redhat.com/ubi8/ubi:8.10
+
+# Maintain metadata
+LABEL maintainer="Your Name <your-email@example.com>"
+LABEL com.redhat.component="ubi8-container"
+LABEL com.redhat.license_terms="https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI"
+LABEL summary="UBI 8.10 base image"
+LABEL description="Universal Base Image 8.10"
+LABEL io.k8s.display-name="Red Hat UBI 8.10"
+LABEL io.openshift.expose-services=""
+LABEL io.openshift.tags="base rhel8"
+LABEL release="1020"
+LABEL distribution-scope="public"
+LABEL vendor="Red Hat, Inc."
+
+# Set environment variables
+ENV container=oci
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Update the system and install necessary packages
+RUN dnf -y update && \
+    dnf -y install git curl jq && \
+    dnf clean all
+
+# Perform any additional configuration
+# e.g., copy custom CA certificates, configure services, etc.
+# ADD your-ca-certificates /etc/pki/ca-trust/source/anchors/
+# RUN update-ca-trust
+
+# Clean up to reduce image size
+RUN rm -rf /var/cache/dnf /var/log/* /tmp/*
+
+# Set the default command to bash
+CMD ["/bin/bash"]
+
+# Expose any necessary ports (optional)
+# EXPOSE 8080
+
+# Set the working directory (optional)
+WORKDIR /workspace
