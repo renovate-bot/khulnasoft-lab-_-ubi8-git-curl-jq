@@ -1,0 +1,56 @@
+{
+  "name": "ubi8-container",
+  "version": "8.10-1020",
+  "release": "1020",
+  "architecture": "x86_64",
+  "summary": "Universal Base Image 8.10",
+  "description": "Universal Base Image 8.10, built on Red Hat Enterprise Linux 8.10",
+  "licenses": [
+    "GPLv2",
+    "GPLv3"
+  ],
+  "labels": {
+    "maintainer": "KhulnaSoft DevOps <info@khulnasoft.com>",
+    "com.redhat.component": "ubi8-container",
+    "com.redhat.license_terms": "https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI",
+    "io.k8s.display-name": "Red Hat UBI 8.10",
+    "io.openshift.expose-services": "",
+    "io.openshift.tags": "base rhel8",
+    "distribution-scope": "public",
+    "vendor": "Red Hat, Inc."
+  },
+  "components": [
+    {
+      "name": "bash",
+      "version": "4.4.20",
+      "release": "2.el8"
+    },
+    {
+      "name": "coreutils",
+      "version": "8.30",
+      "release": "6.el8"
+    },
+    {
+      "name": "curl",
+      "version": "7.61.1",
+      "release": "18.el8"
+    },
+    {
+      "name": "dnf",
+      "version": "4.2.23",
+      "release": "4.el8"
+    },
+    {
+      "name": "git",
+      "version": "2.27.0",
+      "release": "1.el8"
+    },
+    {
+      "name": "jq",
+      "version": "1.5",
+      "release": "12.el8"
+    }
+  ],
+  "build_date": "2024-07-25T12:00:00Z",
+  "maintainer": "KhulnaSoft DevOps <info@khulnasoft.com>"
+}
