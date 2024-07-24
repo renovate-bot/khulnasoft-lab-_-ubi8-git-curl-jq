@@ -21,8 +21,8 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Copy necessary files
 ADD file:/path/to/local/tls-ca-bundle.pem /tmp/tls-ca-bundle.pem
 ADD multi:57820a0f1aec3e967cc65e8adc5d3392cc14753a345b8a5b0c353b1fbd2d4dd5 /etc/yum.repos.d/
-ADD file:/path/to/local/content_manifests/ubi8-container-8.10-1020.json /root/buildinfo/content_manifests/ubi8-container-8.10-1020.json
-ADD file:/path/to/local/Dockerfile-ubi8-8.10-1020 /root/buildinfo/Dockerfile-ubi8-8.10-1020
+ADD content_manifests/ubi8-container-8.10-1020.json /root/buildinfo/content_manifests/ubi8-container-8.10-1020.json
+ADD Dockerfile-ubi8-8.10-1020 /root/buildinfo/Dockerfile-ubi8-8.10-1020
 
 # Move and remove files as specified
 RUN /bin/sh -c mv -f /etc/yum.repos.d/ubi.repo /etc/yum.repos.d/ubi.repo.bak && \
